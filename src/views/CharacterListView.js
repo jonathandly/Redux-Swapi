@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 import { CharacterList } from "../components";
 // import actions
-import { FETCHING, SUCCESS, FAILURE } from '../actions';
 import { getPeople } from '../actions';
+import Loader from 'react-loader-spinner';
 
 class CharacterListView extends React.Component {
   constructor() {
@@ -13,6 +13,7 @@ class CharacterListView extends React.Component {
 
   componentDidMount() {
     // call our action
+    this.props.getPeople();
   }
 
   render() {
